@@ -1,19 +1,6 @@
 <?php
 
 /**
- * Remove query strings from static resources
- */
-function remove_cssjs_ver($src)
-{
-    if (strpos($src, '?ver='))
-        $src = remove_query_arg('ver', $src);
-    return $src;
-}
-add_filter('style_loader_src', 'remove_cssjs_ver', 10, 2);
-add_filter('script_loader_src', 'remove_cssjs_ver', 10, 2);
-
-
-/**
  * Disable External Embeds
  */
 function disable_embed()
@@ -21,18 +8,6 @@ function disable_embed()
     wp_dequeue_script('wp-embed');
 }
 add_action('wp_footer', 'disable_embed');
-
-
-/**
- * Remove file versioning
- */
-function _remove_script_version($src)
-{
-    $parts = explode('?ver', $src);
-    return $parts[0];
-}
-add_filter('script_loader_src', '_remove_script_version', 15, 1);
-add_filter('style_loader_src', '_remove_script_version', 15, 1);
 
 
 /**
