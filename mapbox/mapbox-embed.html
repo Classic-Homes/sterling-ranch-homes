@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Add a georeferenced image</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .mapboxgl-popup-content {
+        font-family: "Arial", sans-serif;
+        width: 300px;
+        box-sizing: border-box;
+      }
+
+      .popup-content h3 {
+        margin: 0 0 5px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .popup-content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 5px;
+      }
+
+      .popup-content p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .popup-content .buttons {
+        display: flex;
+        gap: 5px;
+      }
+
+      .popup-content a.button {
+        flex: 1;
+        display: inline-block;
+        margin: 5px 0;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: #fff;
+        background-color: #96694d;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .popup-content a.button:hover {
+        background-color: #ab8771;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoiY2xvaWRvbHQiLCJhIjoiY2x2bnd0N2g3MGowNzJqcDk3b3Z0eWJvdiJ9.r6gV7ZX9vXD6XkrrRGgwGA";
+      const map = new mapboxgl.Map({
+        container: "map", // container ID
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: "mapbox://styles/cloidolt/cm1iaxild01l301pcc70ud9xn", // style URL
+        center: [-104.664753, 38.964964], // starting position [lng, lat]
+        zoom: 13, // starting zoom
+      });
+    </script>
+  </body>
+</html>
